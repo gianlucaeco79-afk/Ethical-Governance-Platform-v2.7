@@ -1,5 +1,7 @@
 # Ethical Governance Platform v2.7
 
+https://doi.org/10.5281/zenodo.19545702
+
 Piattaforma per la governance etica di modelli ML in produzione.
 Monitora bias, drift e rischi in tempo reale con un'architettura modulare pronta per la produzione.
 
