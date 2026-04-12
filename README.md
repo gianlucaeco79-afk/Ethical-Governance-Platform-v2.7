@@ -1,12 +1,20 @@
-Aegis Core v2.7 — Ethical Governance Platform
+# Ethical Governance Platform v2.7
+
 Piattaforma per la governance etica di modelli ML in produzione.
 Monitora bias, drift e rischi in tempo reale con un'architettura modulare pronta per la produzione.
 
-Novità della V2.7
+---
+
+## Novità della V2.7
+
 La V2.7 introduce tre miglioramenti architetturali ispirati ai pattern di V15.5:
 architettura modulare, ObservabilityService injectable, MessageQueueBase ABC.
-Struttura del pacchetto
 
+---
+
+## Struttura del pacchetto
+
+```text
 ethical_governance/
 ├── config.py
 ├── main.py
@@ -39,22 +47,51 @@ ethical_governance/
     ├── schemas.py
     ├── dependencies.py
     └── routes.py
+```
 
-    Funzionalità
+---
 
-ComponenteDescrizioneBatchPredictorN predizioni in parallelo, partial successRetrainingPipelineLoop feedback → AutoCorrection → retrainingAlertServiceWebhook push su DPD alto, drift, risk scoreModelComparatorConfronto fairness tra modelli con raccomandazioneFairnessAnalyzerDPD, DPR, EOD, DIR, PPD + bootstrap CI
+## Funzionalità
 
-DriftDetectorKS test (numerico) + Chi² contingency (categorico)RiskEnginePesi configurabili da .envAudit Trail forenserequest_id, latency_ms, model_version in ogni logHITL ManagerCoda task umani con approve/rejectPrometheus20+ metriche: Counter, Gauge, Histogram
+| Componente | Descrizione |
+|---|---|
+| **BatchPredictor** | N predizioni in parallelo, partial success |
+| **RetrainingPipeline** | Loop feedback → AutoCorrection → retraining |
+| **AlertService** | Webhook push su DPD alto, drift, risk score |
+| **ModelComparator** | Confronto fairness tra modelli con raccomandazione |
+| **FairnessAnalyzer** | DPD, DPR, EOD, DIR, PPD + bootstrap CI |
+| **DriftDetector** | KS test (numerico) + Chi² contingency (categorico) |
+| **RiskEngine** | Pesi configurabili da .env |
+| **Audit Trail forense** | request_id, latency_ms, model_version in ogni log |
+| **HITL Manager** | Coda task umani con approve/reject |
+| **Prometheus** | 20+ metriche: Counter, Gauge, Histogram |
 
+---
+
+## Installazione
+
+```bash
 pip install -r requirements.txt
 uvicorn ethical_governance.main:app --reload --port 8000
+```
 
+---
+
+## Test
+
+```bash
 pytest test_main.py -v
 pytest test_main.py -m unit
 pytest test_main.py -m integration
 pytest test_main.py -m api
+```
 
 81 test — layer: unit / integration / api
 
-Autore: Gianluca Ecora
-Licenza: MIT
+---
+
+
+**Autore:** Gianluca Ecora 
+**Licenza:** MIT
+
+    
