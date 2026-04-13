@@ -9,7 +9,7 @@ Monitora bias, drift e rischi in tempo reale con un'architettura modulare pronta
 
 ## Novità della V2.7
 
-La V2.7 introduce tre miglioramenti architetturali ispirati ai pattern di V15.5:
+La V2.7 introduce tre miglioramenti architetturali:
 architettura modulare, ObservabilityService injectable, MessageQueueBase ABC.
 
 ---
