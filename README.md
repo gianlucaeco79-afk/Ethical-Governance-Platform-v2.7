@@ -1,4 +1,4 @@
-# Ethical Governance Platform v2.7
+# Ethical Governance Platform v2.7: A Framework for ML Monitoring, Drift Detection and Fairness Analysis
 
 https://doi.org/10.5281/zenodo.19545702
 
