@@ -69,6 +69,13 @@ ethical_governance/
 | **Prometheus** | 20+ metriche: Counter, Gauge, Histogram |
 
 ---
+# Nota di design — HITL-first
+
+Il sistema è progettato con una filosofia HITL-first (Human-In-The-Loop): le decisioni con risk_level HIGH, CRITICAL o UNACCEPTABLE non vengono né eseguite automaticamente né bloccate in modo definitivo, ma messe in attesa di revisione umana (PENDING_APPROVAL).
+
+Questa è una scelta deliberata. In molti contesti reali — credito, sanità, giustizia predittiva — un blocco automatico senza supervisione umana può essere tanto problematico quanto una decisione errata. Il sistema privilegia il controllo umano rispetto all'automazione completa.
+
+Chi necessita di un hard block configurabile (es. contesti anti-frode, compliance normativa) può estendere il sistema aggiungendo una variabile ENFORCE_HARD_BLOCK in config.py e tre righe in governance/engine.py. L'architettura modulare è progettata per rendere questa estensione accessibile senza modificare il resto del sistema.
 
 ## Installazione
 
